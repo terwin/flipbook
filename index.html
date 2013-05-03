@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <script type="text/javascript">
+
+      function ImageCollection(images) {
+        this.images = images;
+        this.i = 0;
+        this.next = function(img) {
+          this.i++;
+          if (this.i == images.length)
+            this.i = 0;
+          img.src = images[this.i];
+          document.getElementById('frameCount').innerHTML = (this.i+1) + ' / ' + images.length;
+        };
+      };
+
+      var trap_wing_p2_restart = new ImageCollection([
+          'trap_wing/p2_restart.0000.png',
+          'trap_wing/p2_restart.0001.png',
+          'trap_wing/p2_restart.0002.png',
+          'trap_wing/p2_restart.0003.png',
+          'trap_wing/p2_restart.0004.png',
+          'trap_wing/p2_restart.0005.png',
+          'trap_wing/p2_restart.0006.png',
+          'trap_wing/p2_restart.0007.png',
+          'trap_wing/p2_restart.0008.png',
+          'trap_wing/p2_restart.0009.png',
+          'trap_wing/p2_restart.0010.png',
+          'trap_wing/p2_restart.0011.png'
+      ]);
+
+    </script>
+  </head>
+
+  <body>
+    <img src="trap_wing/p2_restart.0000.png" onclick="trap_wing_p2_restart.next(this)" width="100%"/>
+    </br>
+    <div id="frameCount">1 / 12</div>
+  </body>
+</html>
